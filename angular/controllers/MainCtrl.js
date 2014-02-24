@@ -67,11 +67,15 @@
 			}
 		};
 		
-		$scope.onEditOkClick = function (expense) {
+		$scope.onEditOkClick = function () {
 			var i;
 			for (i = 0; i < $scope.expenses.length; i += 1) {
 				$scope.expenses[i].editMode = false;
 			}
+		};
+		
+		$scope.onRemoveExpenseClick = function (index) {
+			$scope.expenses.splice(index, 1);
 		};
 	}]);
 }());

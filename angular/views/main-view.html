@@ -47,7 +47,8 @@
 						<input class="name" ng-model="expense.name">
 						<input class="amount" type="number" ng-model="expense.amount">
 						<div class="inline currency">RON</div>
-						<div class="inline button" ng-click="onEditOkClick(expense)">Ok</div>
+						<div class="inline button" ng-click="onEditOkClick()">Ok</div>
+						<div class="inline button" ng-click="onRemoveExpenseClick($index)">Remove</div>
 					</div>
 				</div>
 			</div>
