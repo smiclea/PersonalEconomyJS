@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="app">
     <head>
         <title>Personal Economy</title>
         
-        <script src="3rdparty/jquery-1.11.0.min.js"></script>
+		<script src="//www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+		
         <script src="3rdparty/angular.min.js"></script>
-        <script src="3rdparty/bootstrap/js/bootstrap.min.js"></script>
-        
-        <link rel="stylesheet" href="3rdparty/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="3rdparty/bootstrap/css/bootstrap-theme.min.css">
+		<script src="3rdparty/angular-route.min.js"></script>
+		<script src="3rdparty/angular-resource.min.js"></script>
+		
+		<script src="angular/core/App.js"></script>
+		
+		<script src="angular/controllers/MainCtrl.js"></script>
+		
+		<script src="angular/models/DataService.js"></script>
+		
+		<link rel="stylesheet" href="style/main.css">
     </head>
+	
     <body>
-        <p>1 + 2 = {{ 1 + 2 }}</p>
+		<div ng-view class="app"></div>
     </body>
 </html>

@@ -1,0 +1,95 @@
+body {
+	background: lightblue;
+}
+
+.inline {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.app {
+	padding: 20px;
+	font-size: 12px;
+	font-family: Arial;
+	
+	.button {
+		vertical-align: middle;
+		border: 1px solid lightcyan;
+		padding: 2px 10px;
+		background: lightslategray;
+		color: white;
+		cursor: pointer;
+	}
+	
+	.input-group {
+		margin-bottom: 20px;
+	}
+	
+	.main-view {
+		.col1 {
+			margin-right: 50px;
+		}
+		
+		.monthly input, .current-budget input {
+			width: 200px;
+		}
+		
+		.income-day select {
+			width: 204px;
+		}
+		
+		.subtitle {
+			font-weight: bold;
+		}
+		
+		.monthly-exp {
+			.title {
+				font-weight: bold;
+			}
+			
+			.new-expense {
+				.name {
+					width: 200px;
+				}
+				
+				.amount {
+					width: 96px;
+				}
+				
+				.currency {
+					vertical-align: middle !important;
+				}
+				
+				.button {
+					margin-left: 10px;
+				}
+			}
+			
+			.expense-list {
+				margin-top: 10px;
+				background: white;
+				padding: 5px;
+				display: inline-block;
+				
+				.expense-item {
+					cursor: pointer;
+					margin-bottom: 7px;
+					
+					.name {
+						width: 200px;
+					}
+					
+					.amount {
+						width: 63px;
+					}
+					
+					.write {
+						.currency {
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+		}
+	}
+}

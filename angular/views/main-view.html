@@ -1,0 +1,56 @@
+<div class="main-view">
+	<div class="inline col1">
+		<div class="input-group monthly">
+			<div class="subtitle">Monthly Income:</div>
+			<input type="number" placeholder="Enter monthly income" ng-model="monthlyIncome" min="1" step="50" max="1000000">
+			<span class="currency">RON</span>
+		</div>
+		
+		<div class="input-group current-budget">
+			<div class="subtitle">Current budget:</div>
+			<input type="number" placeholder="Enter current budget" ng-model="currentBudget" min="1" step="50" max="1000000">
+			<span class="currency">RON</span>
+		</div>
+		
+		<div class="income-day">
+			<div class="subtitle">Income day:</div>
+			<select ng-model="incomeDay" ng-disabled="lastDayOfMonth">
+				<option ng-repeat="day in days" value="{{day.value}}">{{day.number}}</option>
+			</select>
+		</div>
+		
+		<div class="income-checkbox">
+			<input id="lastDayOfMonth" type="checkbox" ng-model="lastDayOfMonth" ng-change="onLastDayOfMonthChange(lastDayOfMonth)">
+			<label for="lastDayOfMonth">Income day is last working day of the month</label>
+		</div>
+	</div>
+	<div class="inline col2">
+		<div class="monthly-exp">
+			<div class="inline title">Monthly Expenditures</div>
+			<div class="inline amount"> Total: {{monthlyExpTotal}} RON</div>
+			
+			<div class="new-expense">
+				<input type="text" class="name" placeholder="Enter new expense name" ng-model="newExpenseName">
+				<input type="number" class="amount" placeholder="Enter amount" ng-model="newExpenseAmount">
+				<div class="inline currency">RON</div>
+				<div class="inline button" ng-click="addNewExpense()">Add</div>
+			</div>
+			
+			<div class="expense-list">
+				<div ng-repeat="expense in expenses" class="expense-item" id="expense-{{expense.id}}">
+					<div class="read" ng-hide="expense.editMode" ng-click="onExpenseClick(expense)">
+						<div class="inline name">{{expense.name}}</div>
+						<div class="inline amount">{{expense.amount}}</div>
+						<div class="inline currenct">RON</div>
+					</div>
+					<div class="write" ng-show="expense.editMode">
+						<input class="name" ng-model="expense.name">
+						<input class="amount" type="number" ng-model="expense.amount">
+						<div class="inline currency">RON</div>
+						<div class="inline button" ng-click="onEditOkClick(expense)">Ok</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
